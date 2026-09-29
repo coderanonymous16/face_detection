@@ -1,0 +1,5 @@
+streamlit
+opencv-python-headless<5
+numpy
+streamlit-webrtc
+av

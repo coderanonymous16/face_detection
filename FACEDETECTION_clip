@@ -1,0 +1,38 @@
+import cv2 
+from random import randrange as r
+
+#loading dataset
+trainedData=cv2.CascadeClassifier('facedata.xml')
+
+#start the webcam
+clip=cv2.VideoCapture('cliponly.mp4')
+
+while True:
+    
+    success,frame=clip.read()
+    
+    #conversion to grayscale(black and white)
+    grayimg=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    
+    
+    #detection of face
+    faceCoordinates=trainedData.detectMultiScale(grayimg)
+    
+    
+    for x,y,w,h in faceCoordinates:
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(r(0,256),r(0,256),r(0,256)),2)
+        
+    cv2.imshow('window',frame)
+    key=cv2.waitKey(1)
+    if(key==81 or key==113):
+        break
+    
+
+
+ 
+
+
+#
+
+
+print('end of program')
