@@ -1,0 +1,9 @@
+*.mp4
+*.exe
+*.docx
+*.webp
+*.jpg
+*.jpeg
+*.png
+venv/
+__pycache__/
